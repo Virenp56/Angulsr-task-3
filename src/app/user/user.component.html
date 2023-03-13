@@ -1,0 +1,51 @@
+<!-- Table -->
+<table border="1">
+    <thead>
+        <tr>
+            <th *ngFor="let item of key">{{item}}</th>
+        </tr>
+    </thead>
+    <tr *ngFor="let item of cars">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.color}}</td>
+        <td>{{item.available}}</td>
+        <td *ngIf="item.available"><button>Buy</button></td>
+    </tr>
+</table>
+
+<!-- Radio-Button -->
+<p *ngFor="let item of days">
+    <input type="radio" [(ngModel)]="day" [value]="item"> <label>{{item}}</label>
+</p>
+<div [ngSwitch]="day">
+    <div *ngSwitchCase="'Sunday'">
+        <h3>Today is Sunday!</h3>
+    </div>
+    <div *ngSwitchCase="'Monday'">
+        <h3>Today is Monday!</h3>
+    </div>
+    <div *ngSwitchCase="'Tuesday'">
+        <h3>Today is Tuesday!</h3>
+    </div>
+    <div *ngSwitchCase="'Wednesday'">
+        <h3>Today is Wednesday!</h3>
+    </div>
+    <div *ngSwitchCase="'Thursday'">
+        <h3>Today is Thursday!</h3>
+    </div>
+    <div *ngSwitchCase="'Friday'">
+        <h3>Today is Friday!</h3>
+    </div>
+    <div *ngSwitchCase="'Saturday'">
+        <h3>Today is Saturday! </h3>
+    </div>
+    <div *ngSwitchDefault>Select Day</div>
+</div>
+<br>
+<!-- ngClass and ngStyle -->
+<div [ngClass]="changeStyle ? 'styleFunction1' : 'styleFunction2'">Lorem ipsum dolor sit amet, consectetur
+    adipisicing elit. Eveniet quo vero accusamus commodi
+    rem. Minus culpa nobis
+    deserunt amet et nisi neque est? Fugiat delectus deleniti cupiditate ea id aliquid.</div>
+<button (click)="changeStyle = !changeStyle">Change Color</button>
