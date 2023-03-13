@@ -53,5 +53,14 @@ export class UserComponent {
   public day = ""
 
   public changeStyle: boolean = true;
+  public changeClass: boolean = true;
 
+  public classObj={'background-color': 'black', 'color': 'white'}
+
+  styleFunction1(){
+    return {color: 'blue'}
+  }
+  styleFunction2(){
+    return {color: 'red'}
+  }
 }

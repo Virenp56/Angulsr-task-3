@@ -43,9 +43,28 @@
     <div *ngSwitchDefault>Select Day</div>
 </div>
 <br>
-<!-- ngClass and ngStyle -->
-<div [ngClass]="changeStyle ? 'styleFunction1' : 'styleFunction2'">Lorem ipsum dolor sit amet, consectetur
+<!-- ngClass -->
+<div [ngClass]="{'class-style':changeClass}">Lorem ipsum dolor sit amet, consectetur
     adipisicing elit. Eveniet quo vero accusamus commodi
     rem. Minus culpa nobis
     deserunt amet et nisi neque est? Fugiat delectus deleniti cupiditate ea id aliquid.</div>
-<button (click)="changeStyle = !changeStyle">Change Color</button>
+<button (click)="changeClass = !changeClass">Change Color</button><br><br>
+
+
+<div [ngStyle]="classObj">Lorem ipsum dolor sit amet, consectetur
+    adipisicing elit. Eveniet quo vero accusamus commodi
+    rem. Minus culpa nobis
+    deserunt amet et nisi neque est? Fugiat delectus deleniti cupiditate ea id aliquid.</div><br><br>
+
+
+<!-- ngStyle -->
+<div [ngStyle]="changeStyle ? styleFunction1() : styleFunction2()">Lorem ipsum dolor sit amet, consectetur
+    adipisicing elit. Eveniet quo vero accusamus commodi
+    rem. Minus culpa nobis
+    deserunt amet et nisi neque est? Fugiat delectus deleniti cupiditate ea id aliquid.</div>
+<button (click)="changeStyle = !changeStyle">Change Color</button><br><br>
+
+<!-- custom directive -->
+<div appMyDirective>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum aliquid facilis eius? Odit, eius
+    commodi dicta, nesciunt totam tenetur libero expedita laudantium ad eaque voluptas facilis? Ullam suscipit animi
+    numquam.</div>
