@@ -1,12 +1,18 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appMyDirective]'
 })
 export class MyDirectiveDirective {
 
-  constructor(el: ElementRef) {
-    el.nativeElement.style.color = "orange"
+  constructor(private el: ElementRef) { }
+
+  @HostListener('mouseenter') onEnter() {
+    this.el.nativeElement.style.color = "blue"
+  }
+
+  @HostListener('mouseleave') onLeave() {
+    this.el.nativeElement.style.color = "red"
   }
 
 }
